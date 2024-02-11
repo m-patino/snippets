@@ -9,11 +9,13 @@ class RulesChecker
 {
     private array $errorContainer = [];
 
-    public static function create(?array $rules = []): self{
+    public static function create(?array $rules = []): self
+    {
         return new static($rules);
     }
 
-    private function __construct(private array $rules){
+    private function __construct(private array $rules)
+    {
 
     }
 
@@ -22,10 +24,11 @@ class RulesChecker
      * @param $value
      * @return bool
      */
-    public function check($value):bool {
+    public function check($value):bool
+    {
         /** @var Rule $rule */
-        foreach ($this->rules as $rule){
-            if(!$rule->check($value)){
+        foreach ($this->rules as $rule) {
+            if(!$rule->check($value)) {
                 $this->errorContainer[$rule->getSeverity()] = $rule->getErrorMessage();
             }
         }
@@ -37,15 +40,17 @@ class RulesChecker
      * @param array $rules
      * @return $this
      */
-    public function addRules(array $rules): self{
-        array_push($this->rules , ...$rules);
+    public function addRules(array $rules): self
+    {
+        array_push($this->rules, ...$rules);
         return $this;
     }
 
     /**
      * @return array
      */
-    public function getErrors():array{
+    public function getErrors():array
+    {
         return $this->errorContainer;
     }
 }

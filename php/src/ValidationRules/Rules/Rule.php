@@ -9,7 +9,7 @@ interface Rule
      * @param string $errorMessage
      * @param Severity $severity
      */
-    public function __construct($value,string $errorMessage, Severity $severity);
+    public function __construct($value, string $errorMessage, Severity $severity);
 
     /**
      * @param $valueToCheck
@@ -27,4 +27,3 @@ interface Rule
      */
     public function getErrorMessage():string;
 }
-

@@ -4,7 +4,6 @@ namespace App\Php\ValidationRules\Rules;
 
 use App\Php\ValidationRules\Rules\Rule;
 
-
 class ContainsRule implements Rule
 {
     /**
@@ -13,7 +12,8 @@ class ContainsRule implements Rule
      * @param Severity $severity
      */
     public function __construct(private $value, private readonly string $errorMessage, private readonly Severity $severity)
-    {}
+    {
+    }
 
     /**
      * @param $valueToCheck
@@ -21,13 +21,14 @@ class ContainsRule implements Rule
      */
     public function check($valueToCheck): bool
     {
-        return str_contains($valueToCheck,$this->value);
+        return str_contains($valueToCheck, $this->value);
     }
 
     /**
      * @return int
      */
-    public function getSeverity(): int{
+    public function getSeverity(): int
+    {
         return $this->severity->value;
     }
 
