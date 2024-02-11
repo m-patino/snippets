@@ -11,5 +11,7 @@
             "email": "m.caudrelier@outlook.fr"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-curl": "*"
+    }
 }
