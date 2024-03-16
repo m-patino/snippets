@@ -98,6 +98,5 @@ if args.urls:
                     os.makedirs(subfolder)
 
                 filename = os.path.join(subfolder, picLink.split('/')[-1])
-                executor.submit(downloadFile, picLink, filename)
-
- 
+                if not os.path.exists(filename):
+                    executor.submit(downloadFile, picLink, filename)
