@@ -3,7 +3,7 @@ import concurrent.futures
 import re
 import os
 import urllib.request
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # pip install beautifulsoup4
 
 parser = argparse.ArgumentParser()
 parser.add_argument('url', nargs='?', help='Url')
